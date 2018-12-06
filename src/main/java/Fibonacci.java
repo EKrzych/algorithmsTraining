@@ -1,6 +1,5 @@
 import java.math.BigInteger;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Fibonacci {
@@ -13,13 +12,8 @@ public class Fibonacci {
     }
 
     private BigInteger fibonacci(int n) {
-        if(fibList.containsKey(n)) {
-            return fibList.get(n);
-        } else {
-            BigInteger result = fibonacci(n-1).add(fibonacci(n-2));
-            fibList.put(n,result);
-            return result;
-        }
+        return fibList.computeIfAbsent(n,
+                (key) -> fibonacci(n - 1).add(fibonacci(n - 2)));
     }
 
     public static void main(String[] args) {
