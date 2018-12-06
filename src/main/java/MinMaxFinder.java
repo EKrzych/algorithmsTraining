@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Solution {
+public class MinMaxFinder {
 //Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
     static void miniMaxSum(int[] arr) {
         Arrays.sort(arr);
